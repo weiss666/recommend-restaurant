@@ -1,0 +1,15 @@
+[Unit]
+Description=Recommend Restaurant FastAPI Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/recommend-restaurant
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/recommend-restaurant/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8011
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
