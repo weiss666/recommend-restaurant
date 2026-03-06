@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高分餐厅筛选</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="filters">
+        <select id="city"></select>
+        <select id="district"></select>
+        <select id="hot_spot"></select>
+        <select id="avg_price"></select>
+        <select id="tags"></select>
+        <select id="name"></select>
+        <select id="recommended_dishes"></select>
+        <select id="source"></select>
+        <select id="pet_friendly">
+          <option value="">宠物友好(全部)</option>
+          <option value="true">是</option>
+          <option value="false">否</option>
+        </select>
+        <select id="recent_business_district"></select>
+      </div>
+      <div class="location-bar">
+        <button id="locateBtn">定位授权</button>
+        <input id="locationInput" placeholder="输入当前位置，如 31.2304,121.4737 或 静安寺" />
+        <button id="applyLocationBtn">更新位置</button>
+        <span id="locationLabel"></span>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>上海高分餐厅</h1>
+      <p id="summary"></p>
+      <section id="list" class="list"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card-top">
+          <h2 class="name"></h2>
+          <span class="rating"></span>
+        </div>
+        <p class="meta"></p>
+        <p class="tags"></p>
+        <p class="dishes"></p>
+        <p class="extra"></p>
+      </article>
+    </template>
+
+    <script src="./static/app.js"></script>
+  </body>
+</html>
